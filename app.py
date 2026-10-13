@@ -36,7 +36,7 @@ def load_artifacts():
     global model, class_names
 
     if MODEL_PATH.exists() and CLASSES_PATH.exists():
-        model = load_model(MODEL_PATH)
+       model = load_model(MODEL_PATH, compile=False)
         class_names = json.loads(
             CLASSES_PATH.read_text(encoding="utf-8")
         )
